@@ -73,7 +73,42 @@ let rec listpreorder x =
         |   Empty -> []
         |   Leaf a -> [a]
         |   Node (b, c, d) -> [b] @ listpreorder c @ listpreorder d;;
--
+
+(* Problem 7 Solution *)
+(Lt.Lu.u t t)(Lx.x) t
+
+(Lu. u (Lx.x) (Lx.x)) t
+
+t (Lx.x) (Lx.x) ; No normal form exists 
+
+(* Problem 8 Solution *)
+
+(Lz. z z z)(Ly. y y)
+
+(Ly. y y)(Ly. y y)(Ly. y y) ; No normal form exists
+
+(* Problem 9 Solution *)
+
+(Lx. x x)(Lx. y)
+
+(Lx. y)(Lx. y)
+
+y 
+
+(* Problem 10 Solution *)
+(Lz. z t) (Lz. (Lt. t z) (Lx. z x))
+
+(Lz. z t) (Lz. (Lx. z x) z)
+
+(Lz. z t) (Lz. z z)
+
+(Lz. z z) t
+
+t t
+
+(* Problem 11 Solution *)
+Int -> [Int]
+
 (* Problem 12 Solution *)
 divisors n = [ x | x <- [1..n], mod n x == 0 ]
 
