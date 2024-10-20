@@ -1,3 +1,79 @@
+
+(* Problem 1 Solution *)
+    (* Non-tail recursive *)
+
+let rec replicate x nonneg =
+    match nonneg with
+        |   0 -> []
+        |   a when (a < 0) -> raise (Failure "Negative length")
+        |   b -> x::replicate x (nonneg-1);;
+
+    (* Tail recursive *)
+
+let replicate x nonneg =
+    let rec helper current n =
+        match n with
+            | 0 -> current
+            | a when (a < 0) -> raise (Failure "Negative length")
+            | b -> helper (x :: current) (n-1)
+    in
+        helper [] nonneg;;
+
+(* Problem 2 Solution *)
+    (* Non-tail recursive *)
+    let rec makeList n =
+        match n with
+            |   0 -> []
+            |   a when (a < 0) -> raise (Failure "Negative value")
+            |   b -> inclist (n-1) @ [n];;
+
+    (* Tail recursive *)
+    let makeList n =
+        let rec helper current num =
+            match num with
+            |   0 -> current
+            |   a when (a < 0) -> raise (Failure "Negative value")
+            |   b -> helper (num::current) (num-1)
+        in
+            helper [] n;;
+
+(* Problem 3 Solution *)
+    (* Non-tail recursive *)
+    let rec reverse x =
+        match x with
+            |   [] -> []
+            |   h::t -> reverse t @ [h];;
+
+    (* Tail recursive *)
+    let reverse x =
+        let rec helper rv forward =
+            match forward with
+            |   [] -> rv
+            |   h::t -> helper (h::rv) t
+        in
+            helper [] x;;
+
+(* Problem 4 Solution *)
+let rec numleaf x =
+    match x with
+        |   Empty -> 0
+        |   Leaf a -> 1
+        |   Node (b, c, d) -> numleaf c + numleaf d;;
+
+(* Problem 5 Solution *)
+let rec listinorder x =
+    match x with
+        |   Empty -> []
+        |   Leaf a -> [a]
+        |   Node (b, c, d) -> listinorder c @ [b] @ listinorder d;;
+
+(* Problem 6 Solution *)
+let rec listpreorder x =
+    match x with
+        |   Empty -> []
+        |   Leaf a -> [a]
+        |   Node (b, c, d) -> [b] @ listpreorder c @ listpreorder d;;
+-
 (* Problem 12 Solution *)
 divisors n = [ x | x <- [1..n], mod n x == 0 ]
 
