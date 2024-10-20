@@ -1,0 +1,16 @@
+(* Problem 12 Solution *)
+divisors n = [ x | x <- [1..n], mod n x == 0 ]
+
+(* Problem 13 Solution *)
+isPrime:: Int -> Bool
+isPrime x = divisors x == [1,x]
+
+(* Problem 14 Solution *)
+primes = [ x | x <- [2..], isPrime x ]
+
+(* Problem 15 Solution *)
+primes !! 1999
+
+(* Problem 16 Solution *)
+perfs :: Int -> [Int]
+perfs n = [x | x <- [1..n], sum([y | y <- [1..x-1], x `mod` y == 0]) == x]
