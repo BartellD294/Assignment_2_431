@@ -1,0 +1,17 @@
+(* Problem 11 *)
+(* Author: Connor Damato *)
+
+(* Problem 12 *)
+(* Author: Connor Damato *)
+
+(* Problem 13 *)
+(* Author: Connor Damato *)
+
+(* Problem 14 *)
+(* Author: Connor Damato *)
+
+(* Problem 15 *)
+(* Author: Connor Damato *)
+
+(* Problem 16 *)
+(* Author: Connor Damato *)
